@@ -1,6 +1,8 @@
-package com.hossein.currencyconverter.data.di
+package com.hossein.currencyconverter.di
 
 import com.hossein.currencyconverter.data.CurrencyApi
+import com.hossein.currencyconverter.main.DefaultMainRepository
+import com.hossein.currencyconverter.main.MainRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,4 +24,8 @@ object AppModule {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(CurrencyApi::class.java)
+
+    @Singleton
+    @Provides
+    fun provideMainRepository(api: CurrencyApi): MainRepository = DefaultMainRepository(api)
 }
