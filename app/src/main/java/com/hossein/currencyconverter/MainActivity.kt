@@ -7,6 +7,8 @@ import com.hossein.currencyconverter.databinding.ActivityMainBinding
 
 private lateinit var binding: ActivityMainBinding
 
+
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
